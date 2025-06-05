@@ -1,0 +1,194 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<style type ="text/css">
+    h1,h2 {color: #045405; margin-bottom: 30px; font-size: 24px;}
+    body {font-family: "Roboto", sans-serif;}
+    ul.pet {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        border: 3px solid #045405;
+        border-radius: 7px;
+        padding: 5px 20px 5px 20px;
+    }
+    #food {
+        display: inline-block;
+        background-image: url('poke.jpg'); 
+        background-size: contain; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        width: 300px; 
+        height: 300px; 
+        border-radius: 8px; 
+        vertical-align: top;
+    }
+    #food-text {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 310px);
+        padding-left: 20px; 
+        box-sizing: border-box;
+    }
+    @media (max-width: 900px) {
+        #food, #food-text {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+        }
+        #food {
+            margin-bottom: 15px;
+        }
+    }
+
+
+    #favorite-books-table tr:nth-child(odd){
+        background-color: #eaf195;
+    }
+    #favorite-books-table tr:nth-child(even){
+        background-color: #f0bee6;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .social-icons {
+        position: fixed;
+        top: 100px;
+        right: 35px;
+        display: flex;
+        gap: 10px;
+        }
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        }
+</style>
+</head>
+<head>
+<title>About Me</title>
+</head>
+<body>
+<h1 style="text-align: center;">James Lee</h1>
+<!-- space to not overlap with social icons -->
+<br style = "line-height:2;">
+<div>
+    <h2>Recent Travels</h2>
+    <p>I recently visited South East Asia for the first time. Jakarta, Indonesia and 
+            Singapore, although only an little over an hour apart from each other, they could not be 
+            more different. Both cities have a dense population but Singapore seemed to
+            prioritize visually appealing landscape while Jakarta represented a more 
+            practical approach to urban planning. Both were equally beautiful and I walked
+            away wishing I had more time. 
+         </p>
+</div>
+<hr />
+<div>
+    <h2>Fun Pet Names</h2>
+    <ul class='pet'>
+        <li>A dog named Astra</li>
+        <li>A cat named Sebastian</li>
+        <li>A duck named Donald</li>
+    </ul>
+</div>
+<hr />
+<div>
+    <h2>Favorite Restaurant</h2>
+    <p>Although not quite a restaurant but rather an ice cream place: <a href="https://saffronrosepersianicecream.com" target="_blank">Saffron Rose Persian Ice Cream</a>. 
+       They have a saffron Persian ice cream that is both fragrant and silky mixed with pistachios. I sometimes dream about it and always try to make it a pit stop during my travels to LA. </p>
+</div>
+<hr />
+<div>
+    <h2>Favorite Food</h2>
+    <div id = 'food'>
+    </div>
+    <div id = 'food-text'>
+        <p>One of my favorite foods is Poke. It has a ton of fresh ingredients and it's a great way to combine whole foods and often raw fish in a delicious way that is new everytime.</p>
+    </div>
+</div>
+
+<br clear="all" />
+<hr />
+<div id = 'favorite-books-table'>   
+    <h2>Favorite Books</h2>
+    <table border="1" cellpadding="4" cellspacing="5">
+        <tr>
+            <td>The Obstacle is the Way</td>
+            <td><img src="ryanholiday.jpg" alt="Obstacle is the Way Cover" width="100"></td>
+            <td>Ryan Holiday</td>
+            <td>Ryan Holiday explores how obstalces are not roadblocks but rather a path to success through stoic principles, turning adversity into advantage.</td>
+        </tr>
+        <tr>
+            <td>The Arrival</td>
+            <td><img src="shauntan.jpg" alt="The Arrival Cover" width="100"></td>
+            <td>Shaun Tan</td>
+            <td>Shaun Tan depicts the immigrant experience of the alienation felt from seeking a better life through emotional imagery in a wordless graphic novel.</td>
+        </tr>
+        <tr>
+            <td>Farenheit 451</td>
+            <td><img src="raybradbury.jpg" alt="Farenheit 451 Cover" width="100"></td>
+            <td>Ray Bradbury</td>
+            <td>A story of a future dystopian society where books are banned and society is overtaken by censorship and conformity.</td>
+        </tr>
+        <tr>
+            <td>Crying in H Mart</td>
+            <td><img src="michellezauner.jpg" alt="Crying in H Mart Cover" width="100"></td>
+            <td>Michelle Zauner</td>
+            <td>A memoir exploring Korean American identity centered around Michelle Zaun's relationship with her mother and the role of food and recollections.</td>
+        </tr>
+    </table>
+</div>
+<hr />
+<!-- Guest Book Form -->
+<form action="#" method="get">
+    <h2>Sign the Guest Book!</h2>
+    <table cellpadding="5" cellspacing="5">
+        <tr>
+            <td style="text-align: right;"><label>First Name:</label></td>
+            <td><input type="text" name="first_name" id="the_first_name"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;"><label>Last Name:</label></td>
+            <td><input type="text" name="last_name" id="the_last_name"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;"><label>Email:</label></td>
+            <td><input type="email" name="email" id="the_email"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;"><label>City:</label></td>
+            <td><input type="text" name="city" id="the_city"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;"><label>State:</label></td>
+            <td>
+                <select name="state" id="the_state">
+                    <option value="">Select a state</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="ME">Maine</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="VT">Vermont</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input type = "submit" value = "Go!">
+</form>
+
+<!-- Social Media Icons -->
+<div class="social-icons">
+    <a href="https://facebook.com" target="_blank">
+    <img src="fb.jpg" alt="Facebook">
+    </a>
+
+    <a href="https://twitter.com" target="_blank">
+    <img src="twitter.jpg" alt="Twitter">
+    </a>
+</div>
+
+</body>
+</html>
