@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name and Children</title>
+    <script>
+        const firstName = prompt("Please enter your first name:");
+        if (!firstName) {
+            alert("You did not enter a valid First name.");
+            throw new Error("First name cannot be empty.");
+        }
+        const lastName = prompt("Please enter your last name:");
+        if (!lastName) {
+            alert("You did not enter a valid Last name.");
+            throw new Error("Last name cannot be empty.");
+        }
+        
+        alert("Your name is " + firstName + " " + lastName);
+
+        const numChildren = prompt("How many children do you have?");
+        let message = "";
+
+        if (numChildren === null || isNaN(numChildren)) {
+            message = "You did not enter a valid number of children.";
+        } else {
+            const num = Number(numChildren);
+            if (num === 0) {
+                message = "You have no children";
+            } else if (num === 1) {
+                message = "You have 1 child";
+            } else {
+                message = `You have ${num} children`;
+            }
+        }
+
+        // document.write(message);
+        window.onload = function() {
+            document.getElementById("children-message").textContent = message;
+        };
+
+    </script>
+</head>
+<body>
+    <p id="children-message"></p>
+</body>
+</html>

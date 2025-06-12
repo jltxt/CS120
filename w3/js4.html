@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Number Range</title>
+</head>
+<body>
+    <h2>Odd Numbers in Range</h2>
+    <div id="odds"></div>
+    <h2>Sum of All Numbers in Range</h2>
+    <div id="sum"></div>
+    <script>
+        let start = Number(prompt("Enter the start of the range (integer):"));
+        
+        if (isNaN(start)) {
+            alert("Please enter a valid integer.");
+            throw new Error("Invalid input for start.");
+        }
+        //only prompt for end if start is valid
+        let end = Number(prompt("Enter the end of the range (integer):"));
+        if (isNaN(end)) {
+            alert("Please enter a valid integer.");
+            throw new Error("Invalid input for end.");
+        }
+        if (start === end) {
+            alert("Start and end are the same. No range to process.");
+            throw new Error("Start and end are the same.");
+        }
+        //if start is greater than end, throw an error
+        if (start > end) {
+            alert("Start cannot be greater than end. Please try again.");
+            throw new Error("Start is greater than end.");
+        }
+        
+
+        // Ensure start is less than or equal to end
+        // if (start > end) {
+        //     [start, end] = [end, start];
+        // }
+        let odds = [];
+        let sum = 0;
+        for (let i = start; i <= end; i++) {
+            sum += i;
+            if (i % 2 !== 0) {
+                odds.push(i);
+            }
+        }
+
+        // document.write("<h3>Odd Numbers:</h3>");
+        // document.write(odds.join(", ") + "<br>");
+        // document.write("<h3>Sum:</h3>");
+        // document.write(sum);
+        document.getElementById("odds").textContent = odds.join(", ");
+        document.getElementById("sum").textContent = sum;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two ASC Numbers</title>
+    <script>
+        // Prompt user for two numbers
+        let num1 = Number(prompt("Enter the first number:"));
+        let num2 = Number(prompt("Enter the second number:"))
+
+        // Throw an error if either input is not a number
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("You did not enter valid numbers.");
+            throw new Error("Invalid input for numbers.");
+        }
+        // Throw an error if input is equal
+        if (num1 === num2) {
+            alert("Both numbers are equal.");
+            throw new Error("Both numbers are equal.");
+        }
+
+        //Print to console in ASC
+        if (num1 < num2) {
+            console.log(num1 + ", " + num2);
+        } else {
+            console.log(num2 + ", " + num1);
+        }
+    </script>
+</head>
+<body>
+    <p>Check the console for the output of the two numbers in ascending order.</p>
+</body>
+</html>

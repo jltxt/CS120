@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fahrenheit-Celsius Converter</title>
+    <script>
+        //Prompt user for temp in F 
+        const fahrenheitInput = Number(prompt("Enter the temperature in Fahrenheit:"));
+        if (fahrenheitInput !== null && fahrenheitInput !== "" && 
+            !isNaN(fahrenheitInput)) {
+            const celsiusOutput = (parseFloat(fahrenheitInput) - 32) * 5 / 9;
+            alert("The temperature in Celsius is: " + celsiusOutput.toFixed(2));
+        }
+        //If user enters an invalid input
+        else {
+            alert("You did not enter a valid temperature.");
+        }
+        //Prompt user for temp in C
+        const celsiusInput = prompt("Enter the temperature in Celsius:");
+        if (celsiusInput !== null && celsiusInput !== "" &&
+            !isNaN(celsiusInput)
+        ) {
+            const fahrenheitOutput = (parseFloat(celsiusInput) * 9 / 5) + 32;
+            alert("The temperature in Fahrenheit is: " + fahrenheitOutput.toFixed(2));
+        }
+        //If user enters an invalid input
+        else {
+            alert("You did not enter a valid temperature.");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
