@@ -164,12 +164,13 @@ body {
 }
 
 .member-table {
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #f7f5ef;
-    box-shadow: 0 4px 12px #0000001a;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #f7f5ef;
+  box-shadow: 0 4px 12px #0000001a;
+  overflow-x: auto;
 }
 
 .member-table th {
