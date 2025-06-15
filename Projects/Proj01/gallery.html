@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amoura - Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .heading-text {
+      text-align: center;
+      color: #000000;
+      font-weight: bold;
+      border-bottom: 2px solid #D4AF37;
+      padding-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="split-nav" id="navMenu">
+
+      <div class="nav-section">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="members.html">Band Members</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-logo">
+        <a href="home.html">
+          <img src="full_horizontal_transparent.png" alt="Amoura Wedding Band" />
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="heading-text">Our Recent Events</h1>
+
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1" />
+      <img src="gallery2.jfif" alt="Gallery Image 2" />
+      <img src="gallery3.jpg" alt="Gallery Image 3" />
+      <img src="gallery4.jfif" alt="Gallery Image 4" />
+      <img src="gallery5.jpg" alt="Gallery Image 5" />
+      <img src="gallery6.jpg" alt="Gallery Image 6" />
+      <img src="gallery7.jpg" alt="Gallery Image 7" />
+      <img src="gallery8.jpg" alt="Gallery Image 8" />
+      <img src="gallery9.jpg" alt="Gallery Image 9" />
+    </div>
+  </div>
+
+  <footer style="background: #1a1919; color: white; text-align: center; padding: 10px 20px; position: fixed; bottom: 0; width: 100%; box-sizing: border-box;">
+    <span style="color: white; display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Amoura Wedding Band |
+      <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="twitter.jpg" alt="Twitter" style="height:24px; width:24px; border-radius:50%;" />
+      </a>
+      <a href="https://facebook.com" target="_blank">
+        <img src="fb.jpg" alt="Facebook" style="height:24px; width:24px; border-radius:50%;" />
+      </a>
+    </span>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+  </script>
+  
+</body>
+</html>
