@@ -35,9 +35,11 @@ body {
 
 .bg2 {
     position: relative;
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .bg2::before {
