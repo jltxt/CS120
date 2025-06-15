@@ -7,33 +7,33 @@
   <link rel="stylesheet" href="styles.css"/>
   <style>
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-image: url('contact_bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-        box-sizing: border-box;
-        height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('contact_bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      box-sizing: border-box;
+      height: 100%;
     }
 
     .container {
-        width: 90%;
-        max-width: 700px;
-        padding: 2vw;
-        background: #000000;
-        opacity: 0.90;
-        border-radius: 2%;
-        margin: 0 auto;
-        box-sizing: border-box;
-        padding-bottom: 100px;
-        padding-top: 100px;
+      width: 90%;
+      max-width: 700px;
+      padding: 2vw;
+      background: #000000;
+      opacity: 0.90;
+      border-radius: 2%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding-bottom: 100px;
+      padding-top: 100px;
     }
 
     form {
@@ -69,12 +69,12 @@
       cursor: pointer;
       font-size: 16px;
     }
-
   </style>
 </head>
 <body>
   <header>
     <nav class="split-nav" id="navMenu">
+
       <div class="nav-section">
         <ul>
           <li><a href="home.html">Home</a></li>
@@ -96,11 +96,13 @@
       </div>
 
       <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+
     </nav>
   </header>
 
   <div class="container">
     <h1>Contact Us</h1>
+
     <form action="#" method="get">
       <label for="fname">First Name:</label>
       <input type="text" name="First_Name" id="the_FirstName" required />
@@ -132,6 +134,7 @@
 
       <button type="submit">Send Inquiry</button>
     </form>
+
   </div>
 
   <footer style="background: #1a1919; color: white; text-align: center; padding: 10px 20px; position: fixed; bottom: 0; width: 100%; box-sizing: border-box;">
@@ -152,5 +155,6 @@
       document.getElementById('navMenu').classList.toggle('show');
     }
   </script>
+
 </body>
 </html>

@@ -20,15 +20,15 @@
     }
 
     .heading-text {
-        text-align: center;
-        color: #000000;
-        font-weight: bold;
-        border-bottom: 2px solid #D4AF37;
-        padding-bottom: 10px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: fit-content;
+      text-align: center;
+      color: #000000;
+      font-weight: bold;
+      border-bottom: 2px solid #D4AF37;
+      padding-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
     }
 
     @media (max-width: 768px) {
@@ -41,6 +41,7 @@
 <body>
   <header>
     <nav class="split-nav" id="navMenu">
+
       <div class="nav-section">
         <ul>
           <li><a href="home.html">Home</a></li>
@@ -62,11 +63,13 @@
       </div>
 
       <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+
     </nav>
   </header>
 
   <div class="container">
     <h1 class="heading-text">Our Recent Events</h1>
+
     <div class="gallery-grid">
       <img src="gallery1.jpg" alt="Gallery Image 1" />
       <img src="gallery2.jfif" alt="Gallery Image 2" />
@@ -98,5 +101,6 @@
       document.getElementById('navMenu').classList.toggle('show');
     }
   </script>
+  
 </body>
 </html>

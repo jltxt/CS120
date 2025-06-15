@@ -1,15 +1,16 @@
-/* Delete after meet the band!!*/
+/*General text*/
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #333;
 }
 
+/*General container*/
 .container {
   padding: 80px 20px 60px;
 }
 
-/* Background Sections */
+/*Background sections*/
 .bg-section {
   height: 100vh;
   background-size: cover;
@@ -21,6 +22,7 @@ body {
   padding: 20px;
   color: #ffffff;
   font-size: 2rem;
+  box-sizing: border-box;
 }
 
 .bg1 { background-image: url('bg1.jpg'); 
@@ -29,10 +31,10 @@ body {
   background-position: top; 
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
-
-
+/*bg2*/
 .bg2 {
     position: relative;
     height: 100%;
@@ -58,7 +60,7 @@ body {
 
 .bg2-text {
   position: relative;
-  color: #fdfdfd; /* dark text */
+  color: #fdfdfd;
   padding: 30px 40px;
   border-radius: 12px;
   max-width: 800px;
@@ -72,7 +74,7 @@ body {
   margin-top: 0;
   font-size: 2rem;
   font-weight: bold;
-  color: #D4AF37; /* gold */
+  color: #D4AF37;
   text-align: center;
 }
 
@@ -87,8 +89,7 @@ body {
   margin-bottom: 10px;
 }
 
-
-
+/*bg3*/
 .bg3 { 
     background-image: url('bg3.jfif');
     background-size: cover;
@@ -96,8 +97,10 @@ body {
     background-position: bottom; 
     height: 100vh;
     width: 100%; 
+    overflow: hidden;
 }
 
+/*Subscribe home section*/
 .subscribe-box {
   background-color: #ffffff;
   color: #1a1919;
@@ -140,12 +143,12 @@ body {
 }
 
 /*members section*/
-
 .member-page {
   background-image: url("bg_member.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
+  box-sizing: border-box;
 }
 
 .member-page h1 {
@@ -194,13 +197,14 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+/*responsive memeber photos*/
+@media (max-width: 780px) {
   .member-photo {
     max-width: 100%;
   }
 }
 
-/* Header and Navigation */
+/*Header and Nav*/
 header {
   background-color: #1a1919;
   color: #D4AF37;
@@ -264,7 +268,7 @@ nav.split-nav ul li a:hover {
   max-width: 200px;
 }
 
-/* Mobile */
+/*Responsive for mobile*/
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -293,7 +297,6 @@ nav.split-nav ul li a:hover {
     align-items: center;
     text-align: center;
     display: none;
-    /*gap: 10px; /* Even vertical spacing */
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -303,7 +306,7 @@ nav.split-nav ul li a:hover {
   }
 
   .nav-section li {
-    margin: 0; /* remove extra spacing */
+    margin: 0;
   }
 
   .nav-logo {
