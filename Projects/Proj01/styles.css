@@ -149,6 +149,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;  
   box-sizing: border-box;
+  overflow-x: auto;
 }
 
 .member-page h1 {
