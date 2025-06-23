@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js2_6</title>
+    <style>
+        #stateDisplay {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 50px;
+            width: 200px;
+        }
+
+        #stateList {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Problem 6</h2>
+    <h3>Select a State</h3>
+
+    <!-- list of states -->
+    <select id="stateList" size="10"></select>
+    <input type="button" value="Add State" id="addButton">
+
+    <!-- state display -->
+    <div id="stateDisplay"></div>
+    <br>
+    <!--clear button-->
+    <input type="button" value="Clear States" id="clearButton">
+
+    <script>
+        //array of states
+        const states = [
+            "Maine", "New Hampshire", "Vermont", "Massachusetts", "Connecticut",
+            "New York", "New Jersey", "Pennsylvania", "Delaware", "Maryland"
+        ];
+
+        //create option elements using JS
+        const stateList = document.getElementById("stateList");
+
+        states.forEach(state => {
+            const option = document.createElement("option");
+            option.text = state;
+            option.value = state;
+            stateList.appendChild(option);
+        });
+
+        //first option selected by default
+        stateList.selectedIndex = 0;
+
+        //button for Add State
+        document.getElementById("addButton").onclick = function () {
+            const selectedState = stateList.value;
+            const displayDiv = document.getElementById("stateDisplay");
+            displayDiv.innerHTML += `<div>${selectedState}</div>`;
+        };
+
+        //button for Clear States
+        document.getElementById("clearButton").onclick = function () {
+            document.getElementById("stateDisplay").innerHTML = "";
+        };
+    </script>
+
+</body>
+</html>

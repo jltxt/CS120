@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js2_ec</title>
+    <style>
+        #stateDisplay {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 50px;
+            width: 200px;
+        }
+
+        #stateList {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Problem EC</h2>
+    <h3>Select a State</h3>
+
+    <!-- list of states -->
+    <select id="stateList" size="10"></select>
+    <input type="button" value="Add State" id="addButton">
+
+    <!-- state display -->
+    <div id="stateDisplay"></div>
+    <br>
+    <!-- clear button -->
+    <input type="button" value="Clear States" id="clearButton">
+
+    <script>
+        //array of states
+        const states = [
+            "Maine", "New Hampshire", "Vermont", "Massachusetts", "Connecticut",
+            "New York", "New Jersey", "Pennsylvania", "Delaware", "Maryland"
+        ];
+
+        const stateList = document.getElementById("stateList");
+        const stateDisplay = document.getElementById("stateDisplay");
+
+        //ordered list to display selected states
+        const ol = document.createElement("ol");
+        stateDisplay.appendChild(ol);
+
+        //copy of states to manage current selections - remove once selected
+        let currentStates = states.slice();
+
+        //populate select with states
+        function populateSelect(statesArray) {
+            stateList.innerHTML = "";
+
+            for (let i = 0; i < statesArray.length; i++) {
+                const option = document.createElement("option");
+                option.text = statesArray[i];
+                option.value = statesArray[i];
+                stateList.appendChild(option);
+            }
+
+            if (statesArray.length > 0) {
+                //the first option is selected
+                stateList.selectedIndex = 0;
+            }
+        }
+
+        //populate with initial states
+        populateSelect(currentStates);
+
+        //button for Add State
+        document.getElementById("addButton").onclick = function () {
+            const selectedState = stateList.value;
+            //stop adding spaces after all have been selected
+            if (!selectedState) return;
+
+            const li = document.createElement("li");
+            li.textContent = selectedState;
+            ol.appendChild(li);
+
+            //remove state from currentStates list once added
+            currentStates = currentStates.filter(function (state) {
+                return state !== selectedState;
+            });
+
+            populateSelect(currentStates);
+        };
+
+        //button for Clear States
+        document.getElementById("clearButton").onclick = function () {
+            ol.innerHTML = "";
+            //reset currentStates after clearing
+            currentStates = states.slice();
+            populateSelect(currentStates);
+        };
+    </script>
+
+</body>
+</html>

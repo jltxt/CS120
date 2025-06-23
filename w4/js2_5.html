@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>js2_5
+    
+  </title>
+</head>
+<body>
+
+  <h2>Problem 5</h2>
+
+  <form>
+    <label for="username">Enter your name:
+    </label>
+
+    <input type="text" id="username" placeholder="Name">
+    <!-- Buttons without inline event handlers -->
+    <input type="button" id="HelloButton" value="Hello">
+    <input type="button" id="GoodbyeButton" value="Good Bye">
+    <input type="button" id="GreetingsButton" value="Greetings">
+  </form>
+  
+  <div id="answer"></div>
+  
+  <script>
+    //use the button's value as the greeting
+    function speak() {
+      const name = document.getElementById("username").value.trim();
+      const greeting = this.value;
+      const answerDiv = document.getElementById("answer");
+      
+      //if nothing was entered
+      if (name === "") {
+        alert("Please enter a valid name.");
+        answerDiv.textContent = "no name entered"; 
+      } else {
+        const message = `${greeting} ${name}`;
+        //popup
+        alert(message);
+        answerDiv.textContent = message;
+        
+      }
+    }
+
+    //event handlers inside window.onload
+    window.onload = function() {
+      document.getElementById("HelloButton").onclick = speak;
+      document.getElementById("GoodbyeButton").onclick = speak;
+      document.getElementById("GreetingsButton").onclick = speak;
+    };
+  </script>
+
+</body>
+</html>

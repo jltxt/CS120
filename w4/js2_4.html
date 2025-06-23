@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js2_4</title>
+</head>
+<body>
+
+    <h2>Problem 4</h2>
+
+    <form>
+        <label for="username">Enter your name:
+        </label>
+
+        <input type="text" id="username" placeholder="Name">
+
+        <!-- buttons with inline event handlers -->
+        <input type="button" value="Hello" onclick="speak('Hello')">
+        <input type="button" value="Good Bye" onclick="speak('Good Bye')">
+        <input type="button" value="Greetings" onclick="speak('Greetings')">
+    </form>
+
+    <div id="answer"></div>
+
+    <script>
+        function speak(greeting) {
+            const name = document.getElementById("username").value.trim();
+            const answerDiv = document.getElementById("answer");
+            //if nothing was entered
+            if (name === "") {
+                alert("Please enter a valid name.");
+                answerDiv.textContent = "no name entered";
+            } else {
+                //popup
+                const message = `${greeting} ${name}`;
+                alert(message);   
+                answerDiv.textContent = message;
+            }
+        }
+    </script>
+
+</body>
+</html>

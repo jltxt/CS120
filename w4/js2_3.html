@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js3_3</title>
+</head>
+<body>
+
+    <h2>Problem 3</h2>
+    <div id="answer"></div>
+
+    <script>
+        const nameString = "Pat, Chris, Marlon, Ferncroft, Assunta";
+        //split into array
+        const nameArray = nameString.split(",").map(name => name.trim());
+        //create li elements for the names
+        const listItems = nameArray.map(name => `<li>${name}</li>`).join("");
+        
+        document.getElementById("answer").innerHTML = `<ol>${listItems}</ol>`;
+    </script>
+
+</body>
+</html>
