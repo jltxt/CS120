@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Sun Art Gallery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7e0b0;
+            margin: 40px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #thumbnails {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #thumbnails img {
+            width: 150px;
+        }
+
+        #largeImage {
+            margin-top: 20px;
+        }
+
+        #largeImage img {
+            width: 350px;
+            display: none;
+            border-radius: 6px;
+        }
+
+        #artinfo {
+            margin-top: 20px;
+            padding: 12px;
+            border: 2px solid #6f6f6f;
+            background-color: #fff;
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            border-radius: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h2>Sun Art Gallery</h2>
+
+    <!-- thumbnails -->
+    <div id="thumbnails"></div>
+
+    <!-- LrgImage -->
+    <div id="largeImage">
+        <img id="LrgArt" src="" alt="Large Art">
+    </div>
+
+    <!-- artInfo -->
+    <div id="artinfo"></div>
+
+    <script>
+        function GalleryItem(name, price, thumbnail, largeImage) {
+            this.name = name;
+            this.price = price;
+            this.thumbnail = thumbnail;
+            this.largeImage = largeImage;
+        }
+
+        //Array for gallery items
+        const gallery = [
+            new GalleryItem("Sunset", "$120", "art_th1.png", "art_lrg1.png"),
+            new GalleryItem("Sunrise", "$150", "art_th2.png", "art_lrg2.png"),
+            new GalleryItem("Ocean Sun", "$190", "art_th3.png", "art_lrg3.png"),
+            new GalleryItem("Mountain Sun", "$200", "art_th4.png", "art_lrg4.png"),
+            new GalleryItem("Winter Sun", "$180", "art_th5.png", "art_lrg5.png")
+        ];
+
+        $(document).ready(function () {
+            // use jquery to populate thumbnails on page load
+            for (let i = 0; i < gallery.length; i++) {
+                const item = gallery[i];
+                const img = $("<img>")
+                    .attr("src", item.thumbnail)
+                    .attr("alt", item.name)
+                    .data("index", i);
+                $("#thumbnails").append(img);
+            }
+
+            //show large image on hover wiith fadein
+            $("#thumbnails").on("mouseenter", "img", function () {
+                const index = $(this).data("index");
+                const item = gallery[index];
+                //using stop to end fade when hovering over a new art
+                $("#LrgArt").stop(true, true).hide().attr("src", item.largeImage).fadeIn(1500);
+            });
+
+            //hide large image when mouse leaves thumbnail
+            $("#thumbnails").on("mouseleave", "img", function () {
+                $("#LrgArt").hide();
+            });
+
+
+            //show artinfo on click
+            $("#thumbnails").on("click", "img", function () {
+                const index = $(this).data("index");
+                const item = gallery[index];
+                $("#artinfo")
+                    .html(`<strong>${item.name}</strong><br>Price: ${item.price}`).show();
+
+                //hide panel after 4 seconds
+                setTimeout(function () {$("#artinfo").hide();}, 4000);
+            });
+        });
+    </script>
+
+</body>
+</html>
