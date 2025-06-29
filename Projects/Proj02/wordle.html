@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata for character set and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Page title shown in browser tab -->
+  <title>Wordle Clone</title>
+
+  <!-- External CSS styling for layout and design -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Main heading of the game -->
+  <h1>Wordle Clone</h1>
+
+  <!-- Game board container where letter tiles are injected dynamically -->
+  <div id="game-board"></div>
+
+  <!-- User input area: text box for 5-letter guess + submit button -->
+  <div id="input-area">
+    <input
+      type="text"
+      id="guess-input"
+      maxlength="5"
+      placeholder="Enter 5‑letter word"
+      style="width: 300px;"
+    />
+    <button id="submit-btn">Guess</button>
+  </div>
+
+  <!-- Message display area (replaces alerts) for win/loss/status -->
+  <div id="message-box"></div>
+
+  <!-- On-screen keyboard displaying used letter statuses -->
+  <div id="used-letters"></div>
+
+  <!-- Add space above the restart button -->
+  <div style="margin-top: 24px;"></div>
+  <!-- Restart button, hidden until game ends -->
+  <button id="restart-btn" style="display:none;">Restart Game</button>
+
+  <!-- JavaScript file that powers the game logic -->
+  <script src="script.js"></script>
+
+</body>
+</html>
