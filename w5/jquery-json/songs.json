@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "year": 1991,
+    "genres": ["grunge", "rock"]
+  },
+  {
+    "title": "My Heart Will Go On",
+    "artist": "Celine Dion",
+    "year": 1997,
+    "genres": ["pop", "soundtrack"]
+  },
+  {
+    "title": "...Baby One More Time",
+    "artist": "Britney Spears",
+    "year": 1998,
+    "genres": ["pop"]
+  },
+  {
+    "title": "Hey Ya!",
+    "artist": "OutKast",
+    "year": 2003,
+    "genres": ["hip hop", "funk"]
+  },
+  {
+    "title": "Crazy in Love",
+    "artist": "Beyoncé",
+    "year": 2003,
+    "genres": ["r&b", "pop"]
+  },
+  {
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "year": 2010,
+    "genres": ["soul", "pop"]
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson",
+    "year": 2014,
+    "genres": ["funk", "pop"]
+  },
+  {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "year": 2019,
+    "genres": ["pop", "synth-pop"]
+  }
+]
