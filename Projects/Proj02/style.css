@@ -1,0 +1,124 @@
+/* ====== GLOBAL RESET AND LAYOUT ====== */
+* {
+  box-sizing: border-box;  /* Includes padding and border in width/height */
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Main heading */
+h1 {
+  margin-top: 0;
+}
+
+/* ====== GAME BOARD ====== */
+#game-board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr); /* 6 guesses */
+  gap: 8px;
+  margin: 1rem auto;
+  max-width: 320px;
+}
+
+/* Each row contains 5 letter cells */
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 60px); /* 5 tiles per row */
+  gap: 6px;
+  justify-content: center;
+}
+
+/* Each tile (letter cell) */
+.cell {
+  border: 2px solid #999;
+  height: 60px;
+  line-height: 60px;          /* vertically centers letter */
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* ====== COLOR CODING FOR STATUS ====== */
+.correct {
+  background-color: #6aaa64; /* green */
+  color: white;
+  border-color: #6aaa64;
+}
+
+.wrong-place {
+  background-color: #c9b458; /* yellow */
+  color: white;
+  border-color: #c9b458;
+}
+
+.not-in-word {
+  background-color: #787c7e; /* gray */
+  color: white;
+  border-color: #787c7e;
+}
+
+/* ====== INPUT FIELD & BUTTON ====== */
+#input-area {
+  margin: 1rem 0;
+}
+
+#guess-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 130px;
+}
+
+#submit-btn,
+#restart-btn {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ====== USED LETTER KEYBOARD ====== */
+#used-letters {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr); /* 13 columns = 2 rows for A–Z */
+  gap: 4px;
+  max-width: 390px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Each key on the on-screen keyboard */
+.letter-key {
+  border: 1px solid #999;
+  padding: 6px 4px;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* ====== MESSAGE BOX ====== */
+#message-box {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333; /* default message color */
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media screen and (max-width: 600px) {
+  #game-board .row {
+    grid-template-columns: repeat(5, 45px); /* smaller tiles on small screens */
+  }
+
+  .row .cell {
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.4rem;
+  }
+}
