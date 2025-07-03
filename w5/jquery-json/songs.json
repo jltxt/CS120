@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Hey Ya!",
+        "artist": "OutKast",
+        "genres": ["hip hop", "funk"],
+        "year": 2003
+    },
+    {
+        "title": "Crazy in Love",
+        "artist": "Beyonce",
+        "genres": ["r&b", "pop"],
+        "year": 2003
+    },
+    {
+        "title": "Hips Dont Lie",
+        "artist": "Shakira",
+        "genres": ["latin pop", "dance"],
+        "year": 2006
+    },
+    {
+        "title": "Umbrella",
+        "artist": "Rihanna",
+        "genres": ["pop", "r&b"],
+        "year": 2007
+    },
+    {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "genres": ["soul", "pop"],
+        "year": 2010
+    },
+    {
+        "title": "Call Me Maybe",
+        "artist": "Carly Rae Jepsen",
+        "genres": ["pop"],
+        "year": 2011
+    },
+    {
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson",
+        "genres": ["funk", "pop"],
+        "year": 2014
+    },
+    {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "genres": ["pop"],
+        "year": 2017
+    },
+    {
+        "title": "Bad Guy",
+        "artist": "Billie Eilish",
+        "genres": ["electropop", "pop"],
+        "year": 2019
+    },
+    {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "genres": ["pop", "synth-pop"],
+        "year": 2019
+    }
+]

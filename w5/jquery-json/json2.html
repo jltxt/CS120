@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Song List</h1>
+    <div id="song-list"></div>
+
+    <script>
+        //read using .get()
+        $.get("songs.json", function(data) {
+            let output = "";
+            data.forEach(song => {
+                output += `
+                    <p><strong>${song.title}</strong><br>
+                    Artist: ${song.artist}<br>
+                    Genre: ${song.genres.join(", ")}<br>
+                    Released: ${song.year}</p>
+                `;
+            });
+            document.getElementById("song-list").innerHTML = output;
+        });
+    </script>
+</body>
+</html>
