@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cat Photos</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('cat-background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333333;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .breed-section {
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #0077cc;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Cat Breeds</h1>
+
+    <div class="breed-section">
+        <h2>Maine Coon</h2>
+        <!--imgID will be passed to fetch breed -->
+        <img id="maineCoonImg" src="" alt="Maine Coon">
+        <br>
+        <button onclick="fetchCat('mcoo', 'maineCoonImg')">More</button>
+    </div>
+
+    <div class="breed-section">
+        <h2>Bengal</h2>
+        <img id="bengalImg" src="" alt="Bengal">
+        <br>
+        <button onclick="fetchCat('beng', 'bengalImg')">More</button>
+    </div>
+
+    <div class="breed-section">
+        <h2>Russian Blue</h2>
+        <img id="russianBlueImg" src="" alt="Russian Blue">
+        <br>
+        <button onclick="fetchCat('rblu', 'russianBlueImg')">More</button>
+    </div>
+
+    <script>
+        function fetchCat(breedId, imgId) {
+            fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&has_breeds=1`, {
+                headers: {
+                    'x-api-key': 'live_dmRIpHQx8kloGu31uhz9n6jTuRXpMXFhky71pAGw0T04JoAcnomr3aaWVgeFmMSd'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+              //update image src with the fetched image  
+              if (data[0]) {
+                    document.getElementById(imgId).src = data[0].url;
+                }
+            })
+            //catch error if fails to load
+            .catch(err => console.error(`Failed to load image for ${breedId}`, err));
+        }
+
+        // load all breeds on page load
+        window.onload = () => {
+            fetchCat('mcoo', 'maineCoonImg');
+            fetchCat('beng', 'bengalImg');
+            fetchCat('rblu', 'russianBlueImg');
+        };
+    </script>
+
+</body>
+
+</html>
